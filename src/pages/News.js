@@ -47,7 +47,7 @@ const News = () => {
           flexWrap="wrap"
         >
           {newsList?.map((item, index) => (
-            <Card sx={{ maxWidth: 345, m: 5, maxHeight: 600,backgroundColor:"bisque" }} key={index}>
+            <Card sx={{ maxWidth: 345,minWidth:345, m: 5, maxHeight: 550,minHeight: 550,backgroundColor:"bisque" }} key={index}>
               <CardMedia
                 component="img"
                 height="250"
@@ -63,9 +63,9 @@ const News = () => {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small"><ShareIcon sx={{color:"#222831"}}/></Button>
-                <Button size="small" href={item?.url} target="_blank">
-                  <InfoIcon  sx={{color:"#222831"}}/>
+                <Button size="small"><ShareIcon sx={{color:"#222831",fontSize:40}}/></Button>
+                <Button size="small" href={item?.url} target="_blank" >
+                  <InfoIcon  sx={{color:"#222831",fontSize:40}}/>
                 </Button>
               </CardActions>
             </Card>
