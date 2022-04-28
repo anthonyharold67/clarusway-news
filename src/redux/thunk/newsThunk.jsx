@@ -7,7 +7,7 @@ const url =
   "q=Apple&" +
   "from=2022-04-18&" +
   "sortBy=popularity&" +
-  "apiKey=02d142c50d8b4247b974b25323435174";
+  "apiKey=fab270379f764beeac1201b195f4f9e5";
 
 //! getNews fonksiyonu başka bir fonksiyonu döndürüyor. Bu durumda çağırırken dispatch(getNews()) şeklinde kullanmak gerekir.
 export const getNews = () => {
