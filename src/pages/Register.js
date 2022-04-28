@@ -68,6 +68,7 @@ const Register = () => {
                 autoComplete="on"
                 onChange={(e) => setEmail(e.target.value)}
                 sx={{backgroundColor:"bisque"}}
+                color="success"
                 fullWidth
               />
             </Grid>
@@ -82,6 +83,7 @@ const Register = () => {
                 value={password ?? ""}
                 onChange={(e) => setPassword(e.target.value)}
                 sx={{backgroundColor:"bisque"}}
+                color="success"
                 fullWidth
               />
             </Grid>

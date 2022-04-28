@@ -74,6 +74,7 @@ const Login = () => {
                 autoComplete="on"
                 onChange={(e) => setEmail(e.target.value)}
                 sx={{backgroundColor:"bisque"}}
+                color="success"
                 fullWidth
               />
             </Grid>
@@ -88,6 +89,7 @@ const Login = () => {
                 value={password ?? ""}
                 onChange={(e) => setPassword(e.target.value)}
                 sx={{backgroundColor:"bisque"}}
+                color="success"
                 fullWidth
               />
             </Grid>
