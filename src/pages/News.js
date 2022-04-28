@@ -8,6 +8,7 @@ import { CardMedia } from "@mui/material";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import loadingGif from "../assets/loading.gif";
+import newsImg from "../assets/news.jpg"
 import { getNews } from "../redux/thunk/newsThunk";
 import ShareIcon from '@mui/icons-material/Share';
 import InfoIcon from '@mui/icons-material/Info';
@@ -47,24 +48,24 @@ const News = () => {
           flexWrap="wrap"
         >
           {newsList?.map((item, index) => (
-            <Card sx={{ maxWidth: 345,minWidth:345, m: 5, maxHeight: 550,minHeight: 550,backgroundColor:"bisque" }} key={index}>
+            <Card sx={{ maxWidth: 345,minWidth:345, m: 5, maxHeight: 500,minHeight:500,backgroundColor:"bisque" }} key={index}>
               <CardMedia
                 component="img"
                 height="250"
-                image={item?.urlToImage}
+                image={item?.image_url ? item?.image_url : newsImg}
                 alt="img"
               />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+              <CardContent sx={{height:150}}>
+                <Typography gutterBottom variant="h6" component="div">
                   {item?.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {item?.content}
+                <Typography variant="body2" color="text.secondary" sx={{height:"55px",overflow: "hidden",whiteSpace: "pre",textOverflow: "ellipsis"}} component="div">
+                  {item?.content ? item?.content : item?.description}
                 </Typography>
               </CardContent>
-              <CardActions>
+              <CardActions sx={{marginTop:"5px",marginBottom:0}}>
                 <Button size="small"><ShareIcon sx={{color:"#222831",fontSize:40}}/></Button>
-                <Button size="small" href={item?.url} target="_blank" >
+                <Button size="small" href={item?.link} target="_blank" >
                   <InfoIcon  sx={{color:"#222831",fontSize:40}}/>
                 </Button>
               </CardActions>
@@ -77,3 +78,4 @@ const News = () => {
 };
 
 export default News;
+

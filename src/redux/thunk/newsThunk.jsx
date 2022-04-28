@@ -2,12 +2,7 @@ import { setNewsList } from "../actions/newsActions";
 import { setLoading, clearLoading } from "../actions/appActions";
 import axios from "axios";
 
-const url =
-  "https://newsapi.org/v2/everything?" +
-  "q=Apple&" +
-  "from=2022-04-18&" +
-  "sortBy=popularity&" +
-  "apiKey=fab270379f764beeac1201b195f4f9e5";
+const url ="https://newsdata.io/api/1/news?apikey=pub_69266ad19f7163bc1269d3ac4a5d7ce6b3a6&language=tr,en";
 
 //! getNews fonksiyonu başka bir fonksiyonu döndürüyor. Bu durumda çağırırken dispatch(getNews()) şeklinde kullanmak gerekir.
 export const getNews = () => {
@@ -15,7 +10,8 @@ export const getNews = () => {
     try {
       dispatch(setLoading());
       const { data } = await axios.get(url);
-      dispatch(setNewsList(data.articles));
+      console.log(data);
+      dispatch(setNewsList(data.results));
     } catch (error) {
       console.log(error);
     } finally {
